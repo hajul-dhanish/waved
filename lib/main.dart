@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:waved/feed.dart';
+import 'neumorphism.dart';
 import 'setting.dart';
 import 'theme.dart';
 
@@ -79,8 +80,8 @@ class _HomeCheckState extends State<HomeCheck> {
           ],
           type: BottomNavigationBarType.fixed, // Fixed
           backgroundColor: backgroundColor, // <-- This works for fixed
-          selectedItemColor: iconSelColor,
-          unselectedItemColor: Colors.grey,
+          selectedItemColor: isDarkMode ? Colors.white : Colors.black,
+          unselectedItemColor: isDarkMode ? Colors.white30 : Colors.black38,
           currentIndex: _selectedIndex,
           iconSize: 30,
           onTap: _onItemTapped,
