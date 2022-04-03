@@ -41,6 +41,9 @@ class _CustomNeumorphismState extends State<CustomNeumorphism> {
             ),
           ],
         ),
+        child: const Center(
+          child: Icon(Icons.star),
+        ),
       ),
     );
   }
