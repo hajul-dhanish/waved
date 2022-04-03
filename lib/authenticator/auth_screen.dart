@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:waved/main.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({Key? key}) : super(key: key);
@@ -13,9 +14,9 @@ class AuthScreen extends StatefulWidget {
 class _AuthScreenState extends State<AuthScreen> {
   // --------------- Valuation---------------
   final _formKey = GlobalKey<FormState>();
-  var _username = "";
-  var _email = "";
-  var _password = "";
+  var _username;
+  var _email;
+  var _password;
   bool isLoginPage = false;
   bool _isObscure = true;
   // ----------------------------------------
@@ -176,7 +177,7 @@ class _AuthScreenState extends State<AuthScreen> {
                           startauthentication();
                         },
                         child: isLoginPage
-                            ? const Text("Login In")
+                            ? const Text("Log In")
                             : const Text("Sign Up")),
                   ),
                   // </>
@@ -193,6 +194,18 @@ class _AuthScreenState extends State<AuthScreen> {
                         : const Text("Existing user?"),
                   ),
                   // </>
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomeCheck()),
+                        );
+                      });
+                    },
+                    child: const Text("Login Anonymous"),
+                  ),
                 ],
               ),
             ),

@@ -32,7 +32,7 @@ Widget AddTask(BuildContext context) {
             },
             child: const Center(
               child: Text(
-                'Add Dead line',
+                'Add Dead-line',
                 style: TextStyle(color: Colors.blue),
               ),
             )),

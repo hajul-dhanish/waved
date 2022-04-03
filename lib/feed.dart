@@ -58,7 +58,7 @@ class _FeedVisionState extends State<FeedVision> {
               Card(
                 child: ListTile(
                   tileColor: Colors.transparent,
-                  title: const Text("Gsit push"),
+                  title: const Text("Git push"),
                   trailing: TextButton(
                     onPressed: () {},
                     child: const Icon(Icons.done),
