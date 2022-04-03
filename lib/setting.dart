@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:waved/theme.dart';
 
+import 'authenticator/auth_screen.dart';
 import 'main.dart';
 import 'workwide.dart';
 
@@ -17,6 +19,18 @@ class _SettingVisionState extends State<SettingVision> {
     return Scaffold(
         body: ListView(
       children: [
+        // Logout port
+        customListTile(
+            title: "Logout",
+            onTab: () {
+              setState(() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MyApp()),
+                );
+              });
+            }),
+        const Divider(),
         //Version Port
         customListTile(
           title: "Version",
@@ -28,7 +42,11 @@ class _SettingVisionState extends State<SettingVision> {
             setState(() {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: const Text("Waved is up to date"),
+                  backgroundColor: backgroundColor,
+                  content: const Text(
+                    "Version is up to date",
+                    style: TextStyle(color: Colors.black),
+                  ),
                   action: SnackBarAction(label: "ok", onPressed: () {}),
                 ),
               );

@@ -19,10 +19,11 @@ ThemeData customThemeData = ThemeData(
   focusColor: Colors.white,
   scaffoldBackgroundColor: backgroundColor,
   appBarTheme: AppBarTheme(
-    backgroundColor: backgroundColor,
-    elevation: 0,
-    titleTextStyle: TextStyle(color: isDarkMode ? Colors.white : Colors.black),
-    iconTheme: IconThemeData(color: isDarkMode ? Colors.white : Colors.black),
-  ),
+      backgroundColor: backgroundColor,
+      elevation: 0,
+      titleTextStyle: TextStyle(
+          color: isDarkMode ? Colors.white : Colors.black, fontSize: 25),
+      iconTheme: IconThemeData(color: isDarkMode ? Colors.white : Colors.black),
+      centerTitle: true),
   canvasColor: backgroundColor,
 );

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "75899884334",
+    "project_id": "wave-d",
+    "storage_bucket": "wave-d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75899884334:android:abfeae190f82b31f8b20bf",
+        "android_client_info": {
+          "package_name": "com.example.waved"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "75899884334-m8psp96og4lf2p6aonl4cp4q6lbs263p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbWymkt1UgJl1PNxKsoVQPqaq8SWKyJzA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "75899884334-m8psp96og4lf2p6aonl4cp4q6lbs263p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

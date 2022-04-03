@@ -1,10 +1,17 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:waved/feed.dart';
+import 'authenticator/auth_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'neumorphism.dart';
 import 'setting.dart';
 import 'theme.dart';
 
-void main() => runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // static final ValueNotifier<ThemeMode> themeNotifier =
@@ -23,7 +30,16 @@ class MyApp extends StatelessWidget {
       // darkTheme: ThemeData.dark(),
       // themeMode: currentMode,
       theme: customThemeData,
-      home: const HomeCheck(),
+      home: StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, usersnapshot) {
+          if (usersnapshot.hasData) {
+            return const HomeCheck();
+          } else {
+            return const AuthScreen();
+          }
+        },
+      ),
     );
     // });
   }
@@ -76,7 +92,8 @@ class _HomeCheckState extends State<HomeCheck> {
       bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: "Setting"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings), label: "Setting"),
           ],
           type: BottomNavigationBarType.fixed, // Fixed
           backgroundColor: backgroundColor, // <-- This works for fixed
