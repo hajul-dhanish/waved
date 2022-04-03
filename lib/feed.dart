@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'neumorphism.dart';
+import 'neumorphismbtn.dart';
 
 class FeedVision extends StatefulWidget {
   const FeedVision({Key? key}) : super(key: key);
@@ -12,11 +13,17 @@ class _FeedVisionState extends State<FeedVision> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxHeight: 200, maxWidth: 200),
-        child: const CustomNeumorphism(),
+      bottomNavigationBar: Container(
+        height: 100,
+        padding: const EdgeInsets.all(30),
+        child: const neumorphismButton(),
       ),
-    ));
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [],
+        ),
+      ),
+    );
   }
 }

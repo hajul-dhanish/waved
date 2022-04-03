@@ -4,6 +4,7 @@ import 'package:waved/theme.dart';
 
 import 'authenticator/auth_screen.dart';
 import 'main.dart';
+import 'neumorphism.dart';
 import 'workwide.dart';
 
 class SettingVision extends StatefulWidget {
@@ -21,12 +22,12 @@ class _SettingVisionState extends State<SettingVision> {
       children: [
         // Logout port
         customListTile(
-            title: "Logout",
+            title: "Create New Account",
             onTab: () {
               setState(() {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MyApp()),
+                  MaterialPageRoute(builder: (context) => const AuthScreen()),
                 );
               });
             }),
@@ -47,7 +48,7 @@ class _SettingVisionState extends State<SettingVision> {
                     "Version is up to date",
                     style: TextStyle(color: Colors.black),
                   ),
-                  action: SnackBarAction(label: "ok", onPressed: () {}),
+                  action: SnackBarAction(label: "Ok", onPressed: () {}),
                 ),
               );
             });

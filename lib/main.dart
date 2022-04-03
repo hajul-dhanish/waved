@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:waved/feed.dart';
 import 'authenticator/auth_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'explore.dart';
 import 'neumorphism.dart';
 import 'setting.dart';
 import 'theme.dart';
@@ -57,6 +58,7 @@ class _HomeCheckState extends State<HomeCheck> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     FeedVision(),
+    Explorevision(),
     SettingVision(),
   ];
 
@@ -92,6 +94,8 @@ class _HomeCheckState extends State<HomeCheck> {
       bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.explore), label: "Explore"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.settings), label: "Setting"),
           ],
