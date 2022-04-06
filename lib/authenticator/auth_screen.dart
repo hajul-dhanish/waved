@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:waved/main.dart';
 
 class AuthScreen extends StatefulWidget {
@@ -14,9 +13,9 @@ class AuthScreen extends StatefulWidget {
 class _AuthScreenState extends State<AuthScreen> {
   // --------------- Valuation---------------
   final _formKey = GlobalKey<FormState>();
-  var _username;
-  var _email;
-  var _password;
+  var _username = "";
+  var _email = "";
+  var _password = '';
   bool isLoginPage = false;
   bool _isObscure = true;
   // ----------------------------------------
@@ -31,6 +30,8 @@ class _AuthScreenState extends State<AuthScreen> {
       submitForm(_email, _password, _username);
     }
   }
+
+  // ----------------------------------------
 
   submitForm(String email, String password, String username) async {
     final auth = FirebaseAuth.instance;
